@@ -1,5 +1,5 @@
 import { createReducer, combineReducers } from "@reduxjs/toolkit";
-import { filterContact } from './actions';
+import { filterContact } from './contactsActions';
 
 const filter = createReducer('', {
   [filterContact]: (_, { payload }) => payload,

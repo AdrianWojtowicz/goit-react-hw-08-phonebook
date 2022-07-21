@@ -1,7 +1,3 @@
-li {
-  list-style: circle;
-}
-
 .button {
   padding: 5px, 2px;
   background-color: #e4e4e4;
@@ -9,6 +5,7 @@ li {
   color: black;
   border-radius: 5px;
   margin: 0 10px 10px 10px;
+  transition: all ease-in-out 300ms;
 }
 
 .button:hover {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useGetContactsQuery, useAddContactMutation } from 'api/contactsAPI';
 import { nanoid } from 'nanoid';
+import { Notify } from 'notiflix';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 
@@ -13,8 +14,8 @@ function ContactForm  ({ onSubmit })  {
 
   const handleSubmit = e => {
     e.preventDefault()
-    if (contacts.find(cont => cont.name === name)) {
-      return alert(`${name} is already in contacts`)
+    if (contacts.find(cont => cont.name.toLowerCase() === name.toLowerCase())) {
+      return Notify.failure(`${name} is already in contacts`)
     }
     const id = nanoid()
     addContact({ id, name, number })
